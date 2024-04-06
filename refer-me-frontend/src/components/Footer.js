@@ -53,7 +53,7 @@ export default function Footer() {
           <div class="md:grid md:grid-cols-2 md:gap-8">
             <div>
               <h3 class="text-sm font-bold tracking-wider text-blue-500 uppercase">Navigation</h3>
-              <ul role="list" class="mt-4 space-y-2">
+              <ul class="mt-4 space-y-2">
                 {
                     LIST.map((link, idx) => (   
                         <li>
@@ -66,7 +66,7 @@ export default function Footer() {
             </div>
             <div class="mt-12 md:mt-0">
               <h3 class="text-sm font-bold tracking-wider text-blue-500 uppercase">UI/UX &amp; Dev</h3>
-              <ul role="list" class="mt-4 space-y-2">
+              <ul class="mt-4 space-y-2">
               {
                 LIST.map((link, idx) => (
                     <li>
@@ -81,7 +81,7 @@ export default function Footer() {
           <div class="md:grid md:grid-cols-2 md:gap-8">
             <div>
               <h3 class="text-sm font-bold tracking-wider text-blue-500 uppercase">Legal</h3>
-              <ul role="list" class="mt-4 space-y-2">
+              <ul class="mt-4 space-y-2">
               {
                 LIST.map((link, idx) => (
                     <li>
@@ -93,7 +93,7 @@ export default function Footer() {
             </div>
             <div class="mt-12 md:mt-0">
               <h3 class="text-sm font-bold tracking-wider text-blue-500 uppercase">Socials</h3>
-              <ul role="list" class="mt-4 space-y-2">
+              <ul class="mt-4 space-y-2">
                 <li>
                   <a href="https://twitter.com/WickedTemplates" class="text-base font-normal text-gray-500 hover:text-blue-600"> Twitter </a>
                 </li>
