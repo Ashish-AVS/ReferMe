@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <>
-      <section className="w-full bg-white">
+    <div className="flex h-screen bg-gray">
+      <section className="m-auto pb-32">
         <div className="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl lg:py-24">
           <div className="flex w-full mx-auto text-left">
             <div className="relative inline-flex items-center mx-auto align-middle">
@@ -32,6 +32,6 @@ export default function Hero() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

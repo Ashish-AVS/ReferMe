@@ -1,17 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LINKS = [
     {
         name: "Ask Referral",
-        link: "/ask-referral"
+        link: "/referrals"
     },
     {
         name: "Give Referral",
-        link: "/give-referral"
+        link: "/referrals"
     },
     {
         name: "Find Openings",
-        link: "/find-openings"
+        link: "/referrals"
     },
     {
         name: "About",
@@ -28,13 +29,13 @@ export default function Header() {
     <header className="w-full max-w-7xl container mx-auto my-4">
       <div className="flex flex-col max-w-screen-xl p-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div className="flex flex-row items-center justify-between lg:justify-start">
-          <a
+          <Link
             className="text-lg font-bold tracking-tighter text-blue-600 transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8"
-            href="/groups/header/"
+            to="/"
           >
             {" "}
             GetReferred{" "}
-          </a>
+          </Link>
           <button className="rounded-lg md:hidden focus:outline-none focus:shadow-outline">
             <svg fill="currentColor" viewBox="0 0 20 20" className="w-8 h-8">
               <path
@@ -57,13 +58,13 @@ export default function Header() {
         <nav className="flex-col items-center flex-grow hidden pb-4 border-blue-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2">
           {
             LINKS.map((link, idx) => (
-                <a
+                <Link
                     className="px-4 py-2 mt-2 text-md text-gray-700 font-bold md:mt-0 hover:text-blue-600 focus:outline-none focus:shadow-outline"
-                    href={link.link}
+                    to={link.link}
                     key={link.idx}
                 >
                     {link.name}
-                </a>
+                </Link>
                 ))
           }
           <div className="inline-flex items-center gap-2 list-none lg:ml-auto">
