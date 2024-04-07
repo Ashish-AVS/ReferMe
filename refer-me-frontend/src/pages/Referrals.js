@@ -2,6 +2,7 @@ import React from "react";
 import CompanyCard from "../components/CompanyCard";
 import { COMPANIES } from "../constants";
 import Search from "../components/Search";
+import Modal from "../components/Modal";
 
 export default function Referrals() {
   return (
@@ -35,6 +36,7 @@ export default function Referrals() {
           </div>
         </div>
       </section>
+      <Modal />
     </div>
   );
 }

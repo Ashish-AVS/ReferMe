@@ -26,7 +26,7 @@ const LINKS = [
 
 export default function Header() {
   return (
-    <header className="w-full max-w-7xl container mx-auto my-4">
+    <header className="w-full max-w-7xl container mx-auto">
       <div className="flex flex-col max-w-screen-xl p-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div className="flex flex-row items-center justify-between lg:justify-start">
           <Link
@@ -55,7 +55,7 @@ export default function Header() {
           </button>
         </div>
 
-        <nav className="flex-col items-center flex-grow hidden pb-4 border-blue-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2">
+        <nav className="flex-col items-center flex-grow hidden border-blue-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2">
           {
             LINKS.map((link, idx) => (
                 <Link
