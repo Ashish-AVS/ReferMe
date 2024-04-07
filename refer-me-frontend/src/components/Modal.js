@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
-export default function Modal({ companyName = "Cisco" }) {
-  const [close, setClose] = useState(true);
+export default function Modal({ companyName = "Cisco", setClose}) {
+    
   return (
-    close && (
       <div className="fixed inset-0 flex items-center justify-center z-50">
         <div className="bg-white rounded-lg p-8 shadow-lg">
           <div className="flex justify-between">
@@ -76,6 +75,5 @@ export default function Modal({ companyName = "Cisco" }) {
           </div>
         </div>
       </div>
-    )
   );
 }

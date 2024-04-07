@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useRef} from "react";
 
-export default function Search() {
+export default function Search({setQuery}) {
+  const queryRef = useRef(null);
   return (
     <div className="flex flex-col justify-stretch mb-8">
       <div>
@@ -8,8 +9,9 @@ export default function Search() {
           className="w-1/2 border-neutral-700 border h-12 p-4 rounded-lg"
           type="text"
           placeholder="Popular: Cisco, Google, Microsoft..."
+          ref={queryRef}
         />
-        <button className=" w-1/8 bg-violet-600 text-white ml-6 p-2 px-4 rounded">
+        <button className=" w-1/8 bg-violet-600 text-white ml-6 p-2 px-4 rounded" onClick={()=>setQuery(queryRef.current.value)}>
           Search
         </button>
       </div>

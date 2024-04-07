@@ -1,10 +1,29 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import CompanyCard from "../components/CompanyCard";
 import { COMPANIES } from "../constants";
 import Search from "../components/Search";
-import Modal from "../components/Modal";
+import Fuse from "fuse.js";
 
 export default function Referrals() {
+  const [query, setQuery] = useState("");
+  const [searchResults, setSearchResults] = useState(COMPANIES);
+
+  const fuse = new Fuse(COMPANIES, {
+    includeScore: true,
+    includeMatches: true,
+    threshold: 0.5,
+    keys: ["name", "age", "email"]
+  });
+  useEffect(() => {
+    const results = fuse.search(query);
+    if(query.length===0){
+      setSearchResults(COMPANIES);
+    }
+    else{
+      setSearchResults(results.map(result => result.item));
+    }
+  }, [query])
+
   return (
     <div>
       <section className="text-gray-600 body-font">
@@ -20,23 +39,24 @@ export default function Referrals() {
               referrers!
             </p>
           </div>
-          <Search />
+          <Search setQuery={setQuery}/>
           <h1 className="sm:text-3xl text-xl font-bold title-font mb-4 text-gray-900">
             Companies
           </h1>
           {/* Company List */}
           <div className="flex flex-wrap -m-2">
-            {COMPANIES.map((company, idx) => (
-              <CompanyCard
-                name={company.name}
-                logo={company.logo}
-                sectors={company.sectors}
-              />
+            {searchResults.map((company, idx) => (
+              <>
+                <CompanyCard
+                  name={company.name}
+                  logo={company.logo}
+                  sectors={company.sectors}
+                />
+              </>
             ))}
           </div>
         </div>
       </section>
-      <Modal />
     </div>
   );
 }
